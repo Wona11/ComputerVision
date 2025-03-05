@@ -3,7 +3,6 @@ import sys
 import numpy as np
 
 img = cv.imread('C:\wona_CV\week1\data/soccer.jpg')
-orig_img = img.copy()
 pressed = False
 roi = None
 
@@ -34,6 +33,7 @@ while True:
 
     if key==ord('r'):
         roi = None
+        cv.imshow('Drawing', img)
     elif key==ord('s'):
         if roi is not None:
             cv.imwrite('C:\wona_CV\week1\data/roi.jpg', roi)
